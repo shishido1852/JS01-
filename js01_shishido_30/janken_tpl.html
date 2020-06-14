@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="css/sample.css" />
+    <title>じゃんけん</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>じゃんけん</h1>
+    </header>
+
+    <main>
+      <ul>
+        <li id="gu_btn">グー</li>
+        <li id="cho_btn">チョキ</li>
+        <li id="par_btn">パー</li>
+      </ul>
+      <div>コンピュータの出した手は？「<span id="pc_hands">なに？</span>」</div>
+      <div id="judgment"></div>
+    </main>
+
+    <footer></footer>
+    <script>
+      $("#gu_btn").on("click", function () {
+        const r = Math.floor(Math.random() * 3);
+        let you = "";
+        let com = "";
+
+        if (r == 0) {
+          you = "引き分けです";
+          com = "コンピュータはグー";
+        } else if (r == 1) {
+          you = "あなたの勝ちです";
+          com = "コンピュータはチョキ";
+        } else {
+          you = "あなたの負けです";
+          com = "コンピュータはパー";
+        }
+        $("#judgment").html(you);
+        $("#pc_hands").html(com);
+      });
+
+      $("#cho_btn").on("click", function () {
+        const r = Math.floor(Math.random() * 3);
+        let view = "";
+        let com = "";
+
+        if (r == 0) {
+          you = "引き分けです";
+          com = "コンピュータはチョキ";
+        } else if (r == 1) {
+          you = "あなたの勝ちです";
+          com = "コンピュータはパー";
+        } else {
+          you = "あなたの負けです";
+          com = "コンピュータはグー";
+        }
+        $("#judgment").html(you);
+        $("#pc_hands").html(com);
+      });
+
+      $("#par_btn").on("click", function () {
+        const r = Math.floor(Math.random() * 3);
+        let view = "";
+        let com = "";
+
+        if (r == 0) {
+          you = "引き分けです";
+          com = "コンピュータはパー";
+        } else if (r == 1) {
+          you = "あなたの勝ちです";
+          com = "コンピュータはグー";
+        } else {
+          you = "あなたの負けです";
+          com = "コンピュータはチョキ";
+        }
+        $("#judgment").html(you);
+        $("#pc_hands").html(com);
+      });
+    </script>
+  </body>
+</html>
